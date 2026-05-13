@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head><title>导入结果</title></head>
+<body>
+    <h1>📊 导入结果</h1>
+    <p>成功：{{ success_count }} 条</p>
+    <p>失败：{{ error_count }} 条</p>
+    {% if errors %}
+    <h3>错误详情：</h3>
+    <ul>
+        {% for err in errors %}
+        <li>{{ err }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+    <a href="/admin/web/students">返回学生管理</a>
+</body>
+</html>
