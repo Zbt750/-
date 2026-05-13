@@ -1,0 +1,18 @@
+<view class="container">
+  <view class="header">📬 我的通知</view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <block wx:for="{{notifications}}" wx:key="id">
+    <view class="card {{item.is_read ? 'read' : 'unread'}}" bindtap="markRead" data-id="{{item.id}}">
+      <view class="card-title">{{item.title}}</view>
+      <view class="card-content">{{item.content}}</view>
+      <view class="card-time">{{item.created_at}}</view>
+      <view wx:if="{{!item.is_read}}" class="unread-badge">未读</view>
+    </view>
+  </block>
+
+  <view wx:if="{{notifications.length === 0 && !loading}}" class="empty">
+    暂无通知
+  </view>
+</view>
