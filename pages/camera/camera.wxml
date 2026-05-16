@@ -1,0 +1,43 @@
+<!-- ====== 拍照模式：全屏相机 ====== -->
+<view wx:if="{{!showPreview}}" style="width:100%;height:100vh;position:fixed;top:0;left:0;">
+  <camera 
+    id="myCamera"
+    mode="normal"
+    device-position="back"
+    flash="auto"
+    style="width:100%;height:100vh;"
+  >
+    <!-- 底部快门按钮 -->
+    <view class="camera-overlay">
+      <view class="shutter-btn" bindtap="takePhoto">
+        <view class="shutter-inner"></view>
+      </view>
+    </view>
+  </camera>
+</view>
+
+<!-- ====== 预览模式：显示刚拍的照片 ====== -->
+<view wx:else class="preview-container">
+  <!-- 全屏显示照片 -->
+  <image class="preview-image" src="{{tempImagePath}}" mode="aspectFill" />
+
+  <!-- 底部两个按钮 -->
+  <view class="preview-actions">
+    <!-- 左边：取消重新拍 -->
+    <view class="action-btn cancel-btn" bindtap="retakePhoto">
+      <text>✕ 重新拍摄</text>
+    </view>
+
+    <!-- 右边：确定上传打卡 -->
+    <view class="action-btn confirm-btn" bindtap="confirmPhoto">
+      <text>✓ 确定打卡</text>
+    </view>
+  </view>
+</view>
+
+<!-- 隐藏的 Canvas（用于合成水印） -->
+<canvas 
+  id="watermarkCanvas" 
+  type="2d" 
+  style="width:0;height:0;position:fixed;left:-9999px;"
+></canvas>

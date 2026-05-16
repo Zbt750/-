@@ -1,0 +1,37 @@
+.container { padding: 20px; }
+.header { font-size: 18px; font-weight: bold; margin-bottom: 15px; }
+.loading, .empty { text-align: center; color: #999; margin-top: 50px; }
+
+.task-card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+}
+
+.class-name { font-size: 16px; font-weight: bold; }
+
+.status {
+  font-size: 12px;
+  padding: 3px 8px;
+  border-radius: 10px;
+}
+
+.status.pending { background: #fff3cd; color: #856404; }
+.status.passed { background: #d4edda; color: #155724; }
+.status.failed { background: #f8d7da; color: #721c24; }
+
+.card-body {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14px;
+  color: #666;
+}

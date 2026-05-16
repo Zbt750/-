@@ -1,0 +1,15 @@
+.container{
+  padding: 40px 20px;
+  margin-bottom: 60px;  
+}
+.my_input{
+  border: 1px solid #ccc;
+  padding: 15px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+}
+.my_button{
+  border-radius: 20px;
+  color:rgb(255, 255, 255);
+  background-color:#07a5c1
+}
