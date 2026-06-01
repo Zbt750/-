@@ -1,0 +1,15 @@
+from sqlalchemy import create_engine
+from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.declarative import declarative_base
+
+# 1. 创建数据库引擎
+engine = create_engine(url="sqlite:///duty_db", echo=True)
+
+# 2. 创建声明式映射基类（必须在定义数据模型前，且在 create_all 之前）
+Base = declarative_base()
+
+# 3. 创建数据库会话工厂
+SessionLocal = sessionmaker(bind=engine, autoflush=False, autocommit=False)
+
+# 4. 创建数据库中的所有表（必须在定义好数据模型类之后调用）
+Base.metadata.create_all(bind=engine)

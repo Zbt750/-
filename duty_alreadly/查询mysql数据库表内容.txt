@@ -1,0 +1,22 @@
+1.连接服务器后端
+
+
+2.mysql -u root -p
+   输入mysql密码
+
+
+3.USE duty_db;
+   USE 数据库文件夹名字
+
+
+4.SHOW TABLES  
+    这是展示数据文件夹里面的文件表
+
+5.  采用sql语法查询表中信息
+
+
+
+
+----------------或者这样-----------
+       进入服务器->cat /root/project/FastAPImy_wx_work/models.py
+        
