@@ -1,0 +1,45 @@
+<view class="container">
+  <view class="header">📝 评价</view>
+
+  <view wx:if="{{loading}}" class="loading">加载中...</view>
+
+  <block wx:else>
+    <!-- 打卡照片：优先显示 Base64 -->
+    <view wx:if="{{task.photo_base64}}" class="photo-section">
+      <view class="label">打卡照片</view>
+      <image src="{{task.photo_base64}}" mode="widthFix" class="photo"></image>
+    </view>
+
+    <!-- Base64 不存在时，才用 URL -->
+    <view wx:elif="{{task.photo_url}}" class="photo-section">
+      <view class="label">打卡照片</view>
+      <image src="{{task.photo_url}}" mode="widthFix" class="photo"></image>
+    </view>
+
+    <view wx:else class="photo-section">
+      <view class="label">打卡照片</view>
+      <view class="no-photo">无打卡照片（该班级今日未打卡）</view>
+    </view>
+
+    <!-- 评价按钮 -->
+    <view class="evaluate-section">
+      <button class="btn-qualified" bindtap="markQualified">✅ 合格</button>
+      <button class="btn-unqualified" bindtap="markUnqualified">❌ 不合格</button>
+    </view>
+
+    <!-- 不合格原因输入 -->
+    <view wx:if="{{showReasonInput}}" class="reason-section">
+      <textarea
+        placeholder="请输入不合格原因..."
+        bindinput="onReasonInput"
+        value="{{reason}}"
+        class="reason-input"
+      />
+      <button class="btn-submit" bindtap="submitEvaluate">提交评价</button>
+    </view>
+
+    <view wx:elif="{{isEvaluated}}" class="already-evaluated">
+      该任务已评价（{{currentStatus}}）
+    </view>
+  </block>
+</view>

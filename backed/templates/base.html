@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}值日打卡管理后台{% endblock %}</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+    <div class="layout">
+        <!-- 侧边导航 -->
+        <nav class="sidebar">
+            <h2>📋 管理后台</h2>
+            <ul>
+                <li><a href="/admin/web/classes">🏫 班级管理</a></li>
+                <li><a href="/admin/web/students">👨‍🎓 学生管理</a></li>
+                <li><a href="/admin/web/admins">🔐 管理员分配</a></li>
+            </ul>
+        </nav>
+
+        <!-- 主内容区 -->
+        <main class="content">
+            {% block content %}{% endblock %}
+        </main>
+    </div>
+</body>
+</html>
