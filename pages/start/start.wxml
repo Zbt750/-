@@ -1,6 +1,0 @@
-<!--pages/start/start.wxml-->
-
-<view class="container">
-  <button class="my_button" bindtap="GoToStudent">学生登录入口</button>
-  <button class="my_button"bindtap="GoToAdmin">管理端登录入口</button>
-</view>
